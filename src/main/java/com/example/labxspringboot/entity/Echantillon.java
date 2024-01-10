@@ -24,7 +24,7 @@ public class Echantillon {
     private Patient patient;
 
     @OneToOne
-    @JoinColumn(name = "reactif_id") // Assuming you have a foreign key column in Echantillon
+    @JoinColumn(name = "material_id") // Assuming you have a foreign key column in Echantillon
     private MaterielEchan materielEchan;//material gghadi nsemih m3a abdsade9
 
     @OneToMany(mappedBy = "echantillon")

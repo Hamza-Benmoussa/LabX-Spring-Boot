@@ -24,4 +24,8 @@ public class Fournisseur {
 
     @OneToMany(mappedBy = "fournisseur")
     private List<Reactif> reactifs;
+
+    @OneToMany(mappedBy = "fournisseur")
+    private List<MaterielEchan> materielEchans;
+
 }
