@@ -30,8 +30,18 @@ public class Echantillon {
     @OneToMany(mappedBy = "echantillon")
     private List<Analyse> analyses;
 
+    @OneToOne
+    @JoinColumn(name = "technicien_id")
+    private Technicien technicien;
+
     private String datePrelevement;
 
-
+    public Echantillon(Patient patient, MaterielEchan materielEchan, List<Analyse> analyses, Technicien technicien, String datePrelevement) {
+        this.patient = patient;
+        this.materielEchan = materielEchan;
+        this.analyses = analyses;
+        this.technicien = technicien;
+        this.datePrelevement = datePrelevement;
+    }
 }
 

@@ -34,4 +34,13 @@ public class Patient {
     @OneToMany(mappedBy = "patient")
     private List<Echantillon> historiqueAnalyses;
 
+    public Patient(String nom, String prenom, String dateNaissance, String sexe, String adresse, String numeroTelephone, List<Echantillon> historiqueAnalyses) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.sexe = sexe;
+        this.adresse = adresse;
+        this.numeroTelephone = numeroTelephone;
+        this.historiqueAnalyses = historiqueAnalyses;
+    }
 }

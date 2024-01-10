@@ -25,8 +25,7 @@ public class Reactif {
 
     private String dateExpiration;
 
-    @ManyToOne
-    private Fournisseur fournisseur;
+    private String fournisseurNom;
 
     @OneToOne(mappedBy = "reactif")
     private Test test;

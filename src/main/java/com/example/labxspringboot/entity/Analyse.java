@@ -25,7 +25,8 @@ public class Analyse {
     private Echantillon echantillon;
 
     @ManyToOne
-    private Utilisateur technicienResponsable;
+    @JoinColumn(name = "responsable_id")
+    private ResponsableLabo responsableLabo;
 
     @OneToMany(mappedBy = "analyse")
     private List<Test> tests;
@@ -45,4 +46,15 @@ public class Analyse {
 
     private String commentaires;
 
+    public Analyse(Echantillon echantillon, ResponsableLabo responsableLabo, List<Test> tests, TypeAnalyse typeAnalyse, String dateDebutAnalyse, String dateFinAnalyse, StatusResultat status, StatusAnalyse statusAnalyse, String commentaires) {
+        this.echantillon = echantillon;
+        this.responsableLabo = responsableLabo;
+        this.tests = tests;
+        this.typeAnalyse = typeAnalyse;
+        this.dateDebutAnalyse = dateDebutAnalyse;
+        this.dateFinAnalyse = dateFinAnalyse;
+        this.status = status;
+        this.statusAnalyse = statusAnalyse;
+        this.commentaires = commentaires;
+    }
 }

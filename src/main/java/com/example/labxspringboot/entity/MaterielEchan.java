@@ -24,8 +24,8 @@ public class MaterielEchan {
 
     private String dateExpirationEchan;
 
-    @ManyToOne
-    private Fournisseur fournisseur;
+
+    private String fournisseurNom;
 
     @OneToOne(mappedBy = "materielEchan")
     private Echantillon echantillon;

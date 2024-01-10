@@ -21,7 +21,6 @@ public class Test {
     private Long id;
     private String description;
 
-
     @ManyToOne
     private Analyse analyse;
 
