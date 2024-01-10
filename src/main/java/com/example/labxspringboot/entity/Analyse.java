@@ -1,5 +1,6 @@
 package com.example.labxspringboot.entity;
 
+import com.example.labxspringboot.entity.enume.StatusAnalyse;
 import com.example.labxspringboot.entity.enume.StatusResultat;
 import com.example.labxspringboot.entity.enume.TypeAnalyse;
 import lombok.AllArgsConstructor;
@@ -39,7 +40,9 @@ public class Analyse {
     @Enumerated(EnumType.STRING)
     private StatusResultat status;
 
+    @Enumerated(EnumType.STRING)
+    private StatusAnalyse statusAnalyse;
+
     private String commentaires;
-    @OneToOne(mappedBy = "analyse")
-    private Planification planification;
+
 }

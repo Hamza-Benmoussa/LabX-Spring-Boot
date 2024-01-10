@@ -1,6 +1,6 @@
 package com.example.labxspringboot.entity;
 
-import com.example.labxspringboot.entity.enume.StatusEchantillon;
+import com.example.labxspringboot.entity.enume.StatusAnalyse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,13 +25,10 @@ public class Echantillon {
 
     @OneToOne
     @JoinColumn(name = "reactif_id") // Assuming you have a foreign key column in Echantillon
-    private Reactif reactif;
+    private MaterielEchan materielEchan;//material gghadi nsemih m3a abdsade9
 
     @OneToMany(mappedBy = "echantillon")
     private List<Analyse> analyses;
-
-    @Enumerated(EnumType.STRING)
-    private StatusEchantillon statut;
 
     private String datePrelevement;
 

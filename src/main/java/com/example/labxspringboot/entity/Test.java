@@ -26,8 +26,9 @@ public class Test {
     private Analyse analyse;
 
     @Enumerated(EnumType.STRING)
-    private StatusResultat resultat;
+    private StatusResultat statusResultat;
 
+    private float resultat;
     @ManyToOne
     private Reactif reactif;
 
