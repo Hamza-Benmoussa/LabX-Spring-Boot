@@ -28,4 +28,7 @@ public class Reactif {
     @ManyToOne
     private Fournisseur fournisseur;
 
+    @OneToOne(mappedBy = "reactif")
+    private Test test;
+
 }

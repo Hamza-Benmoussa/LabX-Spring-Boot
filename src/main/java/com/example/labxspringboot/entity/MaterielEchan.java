@@ -26,4 +26,8 @@ public class MaterielEchan {
 
     @ManyToOne
     private Fournisseur fournisseur;
+
+    @OneToOne(mappedBy = "materielEchan")
+    private Echantillon echantillon;
+
 }
