@@ -15,6 +15,27 @@ public class LabXSpringBootApplication {
         SpringApplication.run(LabXSpringBootApplication.class, args);
     }
 
+    @Bean
+    CommandLineRunner start(UtilisateurServiceImpl utilisateurService){
+        return  args -> {
+            Utilisateur testUtilisateur =new Utilisateur();
+            testUtilisateur = new Utilisateur();
+            testUtilisateur.setNomUtilisateur("TestUser");
+            testUtilisateur.setMotDePasse("password");
+            testUtilisateur.setRole(RoleUser.TECHNICIEN);
+            utilisateurService.saveUtilisateur(testUtilisateur);
 
+            System.out.println(testUtilisateur);
+
+            Utilisateur testUtilisateurre =new Utilisateur();
+            testUtilisateurre = new Utilisateur();
+            testUtilisateurre.setNomUtilisateur("TestUser");
+            testUtilisateurre.setMotDePasse("password");
+            testUtilisateurre.setRole(RoleUser.RESPONSABLE_LABORATOIRE);
+            utilisateurService.saveUtilisateur(testUtilisateurre);
+
+            System.out.println(testUtilisateurre);
+        };
+    }
 
 }
