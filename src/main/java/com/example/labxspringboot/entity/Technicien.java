@@ -4,20 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "technicien")
-@PrimaryKeyJoinColumn(name = "utilisateur_id")
-public class Technicien extends Utilisateur{
+public class Technicien extends Utilisateur {
+
+    @OneToMany(mappedBy = "technicienTest")
+    private List<Test> tests;
 
     private String specialiteTechnicien;
-    @OneToOne
-    private Echantillon echantillon;
+
+    @OneToMany(mappedBy = "technicienEch" )
+    private List<Echantillon> echantillon;
 }

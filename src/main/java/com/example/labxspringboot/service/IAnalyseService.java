@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IAnalyseService {
     Analyse saveAnalyse(Analyse analyse);
-    List<Analyse> getAllAnalyse();
+    List<Analyse> getAnalyses();
     Analyse getAnalyseById(Long id);
     Analyse updateAnalyse(Analyse analyse,Long id);
     void deleteAnalyse(Long id);

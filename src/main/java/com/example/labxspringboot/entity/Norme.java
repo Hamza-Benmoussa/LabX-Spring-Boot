@@ -17,9 +17,6 @@ public class Norme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Test test;
-
     private String description;
 
     private double min;
@@ -27,5 +24,5 @@ public class Norme {
     private double max;
 
     @OneToOne(mappedBy = "norme")
-    private Test testNorme;
+    private Test test;
 }

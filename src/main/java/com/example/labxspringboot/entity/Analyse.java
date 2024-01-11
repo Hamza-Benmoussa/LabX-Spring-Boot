@@ -25,14 +25,13 @@ public class Analyse {
     private Echantillon echantillon;
 
     @ManyToOne
-    @JoinColumn(name = "responsable_id")
     private ResponsableLabo responsableLabo;
 
     @OneToMany(mappedBy = "analyse")
     private List<Test> tests;
 
     @Enumerated(EnumType.STRING)
-    private TypeAnalyse typeAnalyse; // Ajout de l'attribut typeAnalyse
+    private TypeAnalyse typeAnalyse;
 
     private String dateDebutAnalyse;
 

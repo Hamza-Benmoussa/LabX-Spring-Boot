@@ -24,15 +24,13 @@ public class Echantillon {
     private Patient patient;
 
     @OneToOne
-    @JoinColumn(name = "material_id") // Assuming you have a foreign key column in Echantillon
-    private MaterielEchan materielEchan;//material gghadi nsemih m3a abdsade9
+    private MaterielEchan materielEchan;
 
     @OneToMany(mappedBy = "echantillon")
     private List<Analyse> analyses;
 
-    @OneToOne
-    @JoinColumn(name = "technicien_id")
-    private Technicien technicien;
+    @ManyToOne
+    private Technicien technicienEch;
 
     private String datePrelevement;
 
@@ -40,7 +38,7 @@ public class Echantillon {
         this.patient = patient;
         this.materielEchan = materielEchan;
         this.analyses = analyses;
-        this.technicien = technicien;
+        this.technicienEch = technicien;
         this.datePrelevement = datePrelevement;
     }
 }

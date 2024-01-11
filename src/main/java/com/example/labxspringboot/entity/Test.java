@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "test")
-
 public class Test {
 
     @Id
@@ -22,17 +21,19 @@ public class Test {
     private String description;
 
     @ManyToOne
-    private Analyse analyse;
+    private Technicien technicienTest;
 
     @Enumerated(EnumType.STRING)
     private StatusResultat statusResultat;
 
     private float resultatNmbr;
 
+    @ManyToOne
+    private Analyse analyse;
+
     @OneToOne
     private Reactif reactif;
 
     @OneToOne
-    @JoinColumn(name = "norme_id")
     private Norme norme;
 }

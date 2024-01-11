@@ -18,7 +18,7 @@ public class AnalyseServiceImpl implements IAnalyseService {
     }
 
     @Override
-    public List<Analyse> getAllAnalyse() {
+    public List<Analyse> getAnalyses() {
         return iAnalyseRepository.findAll();
     }
 

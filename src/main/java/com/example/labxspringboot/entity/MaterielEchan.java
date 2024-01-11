@@ -18,12 +18,9 @@ public class MaterielEchan {
     private Long id;
     private String nomechan;
 
-    private String descriptionechan;
-
     private int quantiteStockEhcna;
 
     private String dateExpirationEchan;
-
 
     private String fournisseurNom;
 

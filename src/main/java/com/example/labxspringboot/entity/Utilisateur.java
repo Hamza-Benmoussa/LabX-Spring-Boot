@@ -27,13 +27,13 @@ public class Utilisateur {
     @Enumerated(EnumType.STRING)
     private RoleUser role;
 
-    @OneToMany(mappedBy = "utilisateur")
-    private List<RapportStatis> generateursRapports;
+//    @OneToMany(mappedBy = "utilisateur")
+//    private List<RapportStatis> generateursRapports;
 
     public Utilisateur(String nomUtilisateur, String motDePasse, RoleUser role, List<RapportStatis> generateursRapports) {
         this.nomUtilisateur = nomUtilisateur;
         this.motDePasse = motDePasse;
         this.role = role;
-        this.generateursRapports = generateursRapports;
+//        this.generateursRapports = generateursRapports;
     }
 }

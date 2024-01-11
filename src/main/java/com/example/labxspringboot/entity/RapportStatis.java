@@ -28,9 +28,9 @@ public class RapportStatis {
 
     private String graphiques;
 
-    @ManyToOne
-    @JoinColumn(name = "utilisateur_id")  // Assuming you have a foreign key column in RapportStatistique
-    private Utilisateur utilisateur;
+//    @ManyToOne
+//    @JoinColumn(name = "utilisateur_id")  // Assuming you have a foreign key column in RapportStatistique
+//    private Utilisateur utilisateur;
 
 
 }
