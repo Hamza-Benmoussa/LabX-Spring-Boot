@@ -6,21 +6,22 @@ import com.example.labxspringboot.service.IMaterialEchanService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@ComponentScan(basePackages = "com.example.labxspringboot.service")
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@DataJpaTest
-@Transactional
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
 public class MaterialEchanServiceImplTest {
 
     @Autowired
@@ -47,19 +48,16 @@ public class MaterialEchanServiceImplTest {
             materialEchanService.deleteMaterialEchan(testMaterialEchan.getId());
         }
     }
-    @Rollback(value = false)
     @Test
     void saveMaterialEchan() {
         assertNotNull(testMaterialEchan.getId(), "MaterialEchan ID should not be null after saving");
     }
-    @Rollback(value = false)
     @Test
     void getMaterialEchanById() {
         MaterielEchan retrievedMaterialEchan = materialEchanService.getMaterialEchanById(testMaterialEchan.getId());
         assertNotNull(retrievedMaterialEchan, "Retrieved materialEchan should not be null");
         assertEquals(testMaterialEchan.getId(), retrievedMaterialEchan.getId(), "IDs should match");
     }
-    @Rollback(value = false)
     @Test
     void updateMaterialEchan() {
         assertNotNull(testMaterialEchan.getId(), "MaterialEchan ID should not be null before updating");
@@ -68,13 +66,11 @@ public class MaterialEchanServiceImplTest {
         assertNotNull(updatedMaterialEchan, "Updated materialEchan should not be null");
         assertEquals(20, updatedMaterialEchan.getQuantiteStockEhcna(), "QuantiteStockEhcna should be updated");
     }
-    @Rollback(value = false)
     @Test
     void getAllMaterialEchans() {
         List<MaterielEchan> materialEchans = materialEchanService.getMaterialEchans();
         assertFalse(materialEchans.isEmpty());
     }
-    @Rollback(value = false)
     @Test
     void deleteMaterialEchan() {
         materialEchanService.deleteMaterialEchan(testMaterialEchan.getId());

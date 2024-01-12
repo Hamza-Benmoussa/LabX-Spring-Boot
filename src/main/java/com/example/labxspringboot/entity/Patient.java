@@ -31,7 +31,7 @@ public class Patient {
 
     private String numeroTelephone;
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient" , cascade = CascadeType.ALL)
     private List<Echantillon> historiqueAnalyses;
 
     public Patient(String nom, String prenom, String dateNaissance, String sexe, String adresse, String numeroTelephone, List<Echantillon> historiqueAnalyses) {

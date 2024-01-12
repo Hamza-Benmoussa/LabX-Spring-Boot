@@ -24,7 +24,14 @@ public class MaterielEchan {
 
     private String fournisseurNom;
 
-    @OneToOne(mappedBy = "materielEchan")
+    @OneToOne(mappedBy = "materielEchan" , cascade = CascadeType.ALL)
     private Echantillon echantillon;
 
+    public MaterielEchan(String nomechan, int quantiteStockEhcna, String dateExpirationEchan, String fournisseurNom) {
+        this.nomechan = nomechan;
+        this.quantiteStockEhcna = quantiteStockEhcna;
+        this.dateExpirationEchan = dateExpirationEchan;
+        this.fournisseurNom = fournisseurNom;
+
+    }
 }

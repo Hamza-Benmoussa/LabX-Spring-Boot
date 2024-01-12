@@ -23,6 +23,8 @@ public class Norme {
 
     private double max;
 
-    @OneToOne(mappedBy = "norme")
+    private String unite;
+
+    @OneToOne(mappedBy = "norme" ,cascade = CascadeType.ALL)
     private Test test;
 }

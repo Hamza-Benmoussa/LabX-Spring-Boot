@@ -25,9 +25,9 @@ public class Analyse {
     private Echantillon echantillon;
 
     @ManyToOne
-    private ResponsableLabo responsableLabo;
+    private ResponsableLabo responsableLaboAnalyse;
 
-    @OneToMany(mappedBy = "analyse")
+    @OneToMany(mappedBy = "analyse" , cascade = CascadeType.ALL)
     private List<Test> tests;
 
     @Enumerated(EnumType.STRING)
@@ -45,9 +45,9 @@ public class Analyse {
 
     private String commentaires;
 
-    public Analyse(Echantillon echantillon, ResponsableLabo responsableLabo, List<Test> tests, TypeAnalyse typeAnalyse, String dateDebutAnalyse, String dateFinAnalyse, StatusResultat status, StatusAnalyse statusAnalyse, String commentaires) {
+    public Analyse(Echantillon echantillon, ResponsableLabo responsableLaboAnalyse, List<Test> tests, TypeAnalyse typeAnalyse, String dateDebutAnalyse, String dateFinAnalyse, StatusResultat status, StatusAnalyse statusAnalyse, String commentaires) {
         this.echantillon = echantillon;
-        this.responsableLabo = responsableLabo;
+        this.responsableLaboAnalyse = responsableLaboAnalyse;
         this.tests = tests;
         this.typeAnalyse = typeAnalyse;
         this.dateDebutAnalyse = dateDebutAnalyse;

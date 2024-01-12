@@ -15,8 +15,10 @@ import java.util.List;
 //@PrimaryKeyJoinColumn(name = "utilisateur_id")
 public class ResponsableLabo extends Utilisateur {
     private String fonctionResponsable;
+    @OneToMany(mappedBy = "responsableLaboTest" , cascade = CascadeType.ALL)
+    private List<Test> tests;
 
-    @OneToMany(mappedBy = "responsableLabo")
+    @OneToMany(mappedBy = "responsableLaboAnalyse" , cascade = CascadeType.ALL)
     private List<Analyse> analyses;
 
 }

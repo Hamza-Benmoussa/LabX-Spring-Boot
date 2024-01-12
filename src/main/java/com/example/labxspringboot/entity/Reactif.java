@@ -27,7 +27,7 @@ public class Reactif {
 
     private String fournisseurNom;
 
-    @OneToOne(mappedBy = "reactif")
+    @OneToOne(mappedBy = "reactif" , cascade = CascadeType.ALL)
     private Test test;
 
 }

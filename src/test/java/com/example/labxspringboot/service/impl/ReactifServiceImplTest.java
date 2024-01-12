@@ -6,21 +6,22 @@ import com.example.labxspringboot.service.IReactifService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@ComponentScan(basePackages = "com.example.labxspringboot.service")
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@DataJpaTest
-@Transactional
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
 public class ReactifServiceImplTest {
 
     @Autowired
@@ -46,19 +47,16 @@ public class ReactifServiceImplTest {
             reactifService.deleteReactif(testReactif.getId());
         }
     }
-    @Rollback(value = false)
     @Test
     void saveReactif() {
         assertNotNull(testReactif.getId(), "Reactif ID should not be null after saving");
     }
-    @Rollback(value = false)
     @Test
     void getReactifById() {
         Reactif retrievedReactif = reactifService.getReactifById(testReactif.getId());
         assertNotNull(retrievedReactif, "Retrieved reactif should not be null");
         assertEquals(testReactif.getId(), retrievedReactif.getId(), "IDs should match");
     }
-    @Rollback(value = false)
     @Test
     void updateReactif() {
         assertNotNull(testReactif.getId(), "Reactif ID should not be null before updating");
@@ -67,13 +65,11 @@ public class ReactifServiceImplTest {
         assertNotNull(updatedReactif, "Updated reactif should not be null");
         assertEquals(20, updatedReactif.getQuantiteStock(), "QuantiteStockReactif should be updated");
     }
-    @Rollback(value = false)
     @Test
     void getAllReactifs() {
         List<Reactif> reactifs = reactifService.getReactifs();
         assertFalse(reactifs.isEmpty());
     }
-    @Rollback(value = false)
     @Test
     void deleteReactif() {
         reactifService.deleteReactif(testReactif.getId());

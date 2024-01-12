@@ -21,7 +21,7 @@ public class Test {
     private String description;
 
     @ManyToOne
-    private Technicien technicienTest;
+    private ResponsableLabo responsableLaboTest;
 
     @Enumerated(EnumType.STRING)
     private StatusResultat statusResultat;

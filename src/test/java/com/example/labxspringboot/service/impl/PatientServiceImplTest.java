@@ -6,21 +6,22 @@ import com.example.labxspringboot.service.IPatientService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@ComponentScan(basePackages = "com.example.labxspringboot.service")
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@DataJpaTest
-@Transactional
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
 public class PatientServiceImplTest {
 
     @Autowired
@@ -43,25 +44,22 @@ public class PatientServiceImplTest {
         patientService.savePatient(testPatient);
     }
 
-    @AfterEach
-    void tearDown() {
-        if (patientService.getPatientById(testPatient.getId()) != null) {
-            patientService.deletePatient(testPatient.getId());
-        }
-    }
-    @Rollback(value = false)
+//    @AfterEach
+//    void tearDown() {
+//        if (patientService.getPatientById(testPatient.getId()) != null) {
+//            patientService.deletePatient(testPatient.getId());
+//        }
+//    }
     @Test
     void savePatient() {
         assertNotNull(testPatient.getId(), "Patient ID should not be null after saving");
     }
-    @Rollback(value = false)
     @Test
     void getPatientById() {
         Patient retrievedPatient = patientService.getPatientById(testPatient.getId());
         assertNotNull(retrievedPatient, "Retrieved patient should not be null");
         assertEquals(testPatient.getId(), retrievedPatient.getId(), "IDs should match");
     }
-    @Rollback(value = false)
     @Test
     void updatePatient() {
         assertNotNull(testPatient.getId(), "Patient ID should not be null before updating");
@@ -70,13 +68,11 @@ public class PatientServiceImplTest {
         assertNotNull(updatedPatient, "Updated patient should not be null");
         assertEquals("UpdatedPrenom", updatedPatient.getPrenom(), "Prenom should be updated");
     }
-    @Rollback(value = false)
     @Test
     void getAllPatients() {
         List<Patient> patients = patientService.getPatients();
         assertFalse(patients.isEmpty());
     }
-    @Rollback(value = false)
     @Test
     void deletePatient() {
         patientService.deletePatient(testPatient.getId());

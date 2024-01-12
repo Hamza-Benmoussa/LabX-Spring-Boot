@@ -26,7 +26,7 @@ public class Echantillon {
     @OneToOne
     private MaterielEchan materielEchan;
 
-    @OneToMany(mappedBy = "echantillon")
+    @OneToMany(mappedBy = "echantillon" ,cascade = CascadeType.ALL)
     private List<Analyse> analyses;
 
     @ManyToOne

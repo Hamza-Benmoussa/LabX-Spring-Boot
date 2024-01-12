@@ -37,10 +37,9 @@ Le projet LabXpert est configuré pour construire une application robuste en uti
 
 -Use cas:
 
-![Diagramme de Use case LabX](https://github.com/HAMZA0707/LabX-Spring-Boot/assets/89112359/af9fd8b6-1690-49e1-811f-47162e0ad665)
+![img.png](img.png)
 
 -Class :
 
-![class drawio](https://github.com/HAMZA0707/LabX-Spring-Boot/assets/89112359/2a452432-75c7-4ab8-983d-acf284f37cf7)
-
+![class.png](..%2F..%2Freadme%2Fclass.png)
 
