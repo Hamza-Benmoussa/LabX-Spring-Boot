@@ -21,13 +21,13 @@
 <!--            <groupId>org.junit.jupiter</groupId>-->
 <!--            <artifactId>junit-jupiter-api</artifactId>-->
 <!--            <version>5.8.2</version>-->
-<!--            <scope>test</scope>-->
+<!--            <scope>testAnalyse</scope>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>org.junit.jupiter</groupId>-->
 <!--            <artifactId>junit-jupiter-engine</artifactId>-->
 <!--            <version>5.8.2</version>-->
-<!--            <scope>test</scope>-->
+<!--            <scope>testAnalyse</scope>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <scope>testAnalyse</scope>
         </dependency>
     </dependencies>
 

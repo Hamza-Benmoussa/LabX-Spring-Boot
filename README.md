@@ -30,7 +30,7 @@ LabXpert est un système complet de gestion de laboratoire médical développé 
    - Génération de rapports statistiques pour évaluer les performances du laboratoire, identifier les tendances et prendre des décisions basées sur les données.
 
 ## Configuration du Projet
-Le projet LabXpert est configuré pour construire une application robuste en utilisant Spring Boot, PostgreSQL, et JUnit 5 pour les tests.
+Le projet LabXpert est configuré pour construire une application robuste en utilisant Spring Boot, PostgreSQL, et JUnit 5 pour les testAnalyses.
 
 
 ## Diagramme UML

@@ -26,5 +26,5 @@ public class Norme {
     private String unite;
 
     @OneToOne(mappedBy = "norme" ,cascade = CascadeType.ALL)
-    private Test test;
+    private TestAnalyse testAnalyse;
 }

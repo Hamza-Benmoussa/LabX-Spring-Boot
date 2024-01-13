@@ -16,7 +16,7 @@ import java.util.List;
 public class ResponsableLabo extends Utilisateur {
     private String fonctionResponsable;
     @OneToMany(mappedBy = "responsableLaboTest" , cascade = CascadeType.ALL)
-    private List<Test> tests;
+    private List<TestAnalyse> testAnalyses;
 
     @OneToMany(mappedBy = "responsableLaboAnalyse" , cascade = CascadeType.ALL)
     private List<Analyse> analyses;
