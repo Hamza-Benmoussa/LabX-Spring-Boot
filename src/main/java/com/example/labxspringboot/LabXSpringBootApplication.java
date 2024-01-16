@@ -20,6 +20,10 @@ public class LabXSpringBootApplication {
         SpringApplication.run(LabXSpringBootApplication.class, args);
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20cb5112556b5eda0d0c9ed9678e415883835703
     @Bean
     CommandLineRunner start(NormeServiceImpl normeService, UtilisateurServiceImpl utilisateurService, EchantillonServiceImpl echantillonService, PatientServiceImpl patientService, MaterialEchanServiceImpl materialEchanService, ReactifServiceImpl reactifService, AnalyseServiceImpl analyseService, TestAnalyseServiceImpl testAnalyseService) {
         return args -> {
@@ -97,4 +101,8 @@ public class LabXSpringBootApplication {
             System.out.println(testAnalyse1);
         };
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20cb5112556b5eda0d0c9ed9678e415883835703
 }
