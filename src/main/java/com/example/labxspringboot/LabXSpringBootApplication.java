@@ -77,7 +77,7 @@ public class LabXSpringBootApplication {
             testAnalyse1.setAnalyse(testAnalyse);
             testAnalyse1.setReactif(testReactif);
             testAnalyse1.setDescription("lhyt");
-            Norme norme = normeService.getNormeById(39L);
+            Norme norme = normeService.getNormeById(10L);
             testAnalyse1.setNorme(norme);
             testAnalyse1.setResultatNmbr(80);
             testAnalyseService.saveTestAnalyse(testAnalyse1);
